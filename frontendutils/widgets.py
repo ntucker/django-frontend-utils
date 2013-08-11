@@ -6,17 +6,20 @@ from django.utils.encoding import force_unicode
 
 
 class DateTimePicker(forms.DateTimeInput):
-    def __init__(self, attrs=None):
+    def __init__(self, attrs=None, format=None):
         default_attrs = {'class':'date-time'}
         if attrs:
             default_attrs.update(attrs)
-        super(DateTimePicker, self).__init__(default_attrs)
+        super(DateTimePicker, self).__init__(default_attrs, format)
     def render(self, *args, **kwargs):
         ret = super(DateTimePicker, self).render(*args, **kwargs)
         return mark_safe(u"""<div class="input-prepend"><span class="add-on"><i class="icon-time"></i></span>{0}</div>""".format(ret))
 
     class Media:
-        js = ('js/jquery-ui-timepicker-addon.js',) 
+        js = ('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
+              '//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js',
+              'js/lib/jquery-ui-timepicker-addon.js',)
+        css = {'all': ('css/jqueryui.css',)}
 
 class TagInput(forms.TextInput):
     suggestions = []
