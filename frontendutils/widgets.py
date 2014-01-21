@@ -1,8 +1,8 @@
 from django import forms
-from django.utils.safestring import mark_safe
-from django.utils.encoding import force_text
 from django.forms.util import flatatt
+from django.utils.encoding import force_text
 from django.utils.html import escape, conditional_escape
+from django.utils.safestring import mark_safe
 
 
 class DateTimePicker(forms.DateTimeInput):
@@ -19,7 +19,7 @@ class DateTimePicker(forms.DateTimeInput):
         js = ('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
               '//ajax.googleapis.com/ajax/libs/jqueryui/1.9.2/jquery-ui.min.js',
               'js/lib/jquery-ui-timepicker-addon.js',)
-        css = {'all': ('css/jqueryui.css',)}
+        css = {'all': ('css/jquery-ui.css',)}
 
 class TagInput(forms.TextInput):
     suggestions = []
