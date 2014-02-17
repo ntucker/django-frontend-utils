@@ -13,7 +13,7 @@ class DateTimePicker(forms.DateTimeInput):
         super(DateTimePicker, self).__init__(default_attrs, format)
     def render(self, *args, **kwargs):
         ret = super(DateTimePicker, self).render(*args, **kwargs)
-        return mark_safe(u"""<div class="input-group"><span class="input-group-addon"><i class="icon-time"></i></span>{0}</div>""".format(ret))
+        return mark_safe(u"""<div class="input-group"><span class="input-group-addon"><i class="fa fa-fw fa-clock-o"></i></span>{0}</div>""".format(ret))
 
     class Media:
         js = ('//ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js',
