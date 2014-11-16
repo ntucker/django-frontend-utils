@@ -1,1 +1,1 @@
-<time {% if pubdate %}pubdate {% endif %}datetime="{{time|date:"Y-m-d\TH:i:sO"}}" title="{{time|date:"P M d Y"}}">{{time_display}}</time>
+<time {% if pubdate %}pubdate {% endif %}datetime="{{time|date:"Y-m-d\TH:i:sO"}}" title="{{time|date:"P M d Y"}}"{% if itemprop %} itemprop={{itemprop}}{% endif %}>{{time_display}}</time>
