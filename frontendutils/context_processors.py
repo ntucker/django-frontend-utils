@@ -1,6 +1,6 @@
-from django.contrib.sites.models import Site
+from django.contrib.sites.shortcuts import get_current_site 
 
 def site(request):
     return {
-        'site': Site.objects.get_current()
+        'site': get_current_site(request)
     }
